@@ -1,10 +1,66 @@
-<nav class="site-nav" aria-label="Primary">
-  <ul>
-    <li><a href="causes.html">Causes</a></li>
-    <li><a href="effects.html">Effects</a></li>
-    <li><a href="history.html">History</a></li>
-    <li><a href="movements.html">Movements</a></li>
-    <li><a href="solutions.html">Solutions</a></li>
-  </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Racism Awareness</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      scroll-behavior: smooth; 
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #333;
+      padding: 10px;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    section {
+      height: 100vh; 
+      padding: 60px 20px 20px; 
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#causes">Causes</a>
+    <a href="#effects">Effects</a>
+    <a href="#history">History</a>
+    <a href="#movements">Movements</a>
+    <a href="#solutions">Solutions</a>
+  </nav>
 
-</nav>
+  <section id="causes">
+    <iframe src="causes.html"></iframe>
+  </section>
+
+  <section id="effects">
+    <iframe src="effects.html"></iframe>
+  </section>
+
+  <section id="history">
+    <iframe src="history.html"></iframe>
+  </section>
+
+  <section id="movements">
+    <iframe src="movements.html"></iframe>
+  </section>
+
+  <section id="solutions">
+    <iframe src="solutions.html"></iframe>
+  </section>
+</body>
+</html>
