@@ -1,0 +1,61 @@
+/*GLOBAL CSS*/
+    
+    * {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      scroll-behavior: smooth; 
+    }
+
+    body {
+      background: #f4f4f4;
+      
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #333;
+      padding: 10px;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    section {
+      height: 100vh; 
+      padding: 60px 20px 20px; 
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  /*ADD CSS BELOW THE COMMENTS FOR EACH HTML FILE ASSIGNED TO YOU*/
+
+/* Example for causes.html */
+
+
+
+
+
+/* Effects.HTML CSS*/
+
+
+
+
+
+/* History.HTML CSS*/
+
+
+
+
+
+/* Movements.HTML CSS*/
+
+
+
+
+
+/* Solutions.HTML CSS*/
