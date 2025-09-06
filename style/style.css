@@ -1,17 +1,18 @@
 
 :root {
-  --base-bg: #ffffff;       /* Main background: white */
-  --text-dark: #111111;     /* Main text: almost black */
-  --nav-bg: #000000;        /* Navbar background: black */
-  --accent-gray: #888888;   /* Subtle gray for highlights / borders */
-  --section-bg: #f9f9f9;    /* Section background: light gray for contrast */
-  --link-hover: #555555;    /* Darker gray for hover effects */
+  --base-bg: #ffffff;       /* Main background */
+  --text-dark: #111111;     /* Main text */
+  --nav-bg: #000000;        /* Navbar background */
+  --accent-gray: #888888;   /* Borders/lines */
+  --section-bg: #f9f9f9;    /* Section background */
+  --link-hover: #555555;    /* Navbar hover */
 }
 
-/* Reset + Base Styling */
+/* Reset + Base */
 * {
   font-family: 'Arial', sans-serif;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
@@ -19,6 +20,7 @@
 body {
   background: var(--base-bg);
   color: var(--text-dark);
+  overflow-x: hidden;
 }
 
 /* NAVBAR */
@@ -35,7 +37,7 @@ nav {
 }
 
 nav a {
-  color: #ffffff;
+  color: #fff;
   margin: 0 20px;
   text-decoration: none;
   font-weight: 600;
@@ -46,34 +48,23 @@ nav a:hover {
   color: var(--link-hover);
 }
 
-/* Responsive navbar for mobile */
+/* Responsive Navbar */
 @media (max-width: 480px) {
   nav {
     flex-direction: column;
     padding: 10px 0;
   }
-
   nav a {
     margin: 5px 0;
   }
 }
 
-/* SECTIONS */
-section {
-  min-height: 100vh;
-  padding: 80px 20px 40px;
-  background: var(--section-bg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid var(--accent-gray);
-}
-
-/* Home / Hero Section */
+/* HERO SECTION */
 #home {
-  background: var(--base-bg);
+  min-height: 100vh;
+  padding-top: 100px; /* space for navbar */
   text-align: center;
+  background: var(--base-bg);
 }
 
 #home h1 {
@@ -89,15 +80,33 @@ section {
   color: var(--accent-gray);
 }
 
-/* Paragraphs */
-p {
+#home p {
   max-width: 700px;
-  text-align: center;
+  margin: 0 auto;
   line-height: 1.6;
-  color: #333333;
+  color: #333;
 }
 
-/* Section Headers */
+/* FULLSCREEN IFRAME SECTIONS */
+.fullscreen-iframe {
+  position: relative;
+  width: 100%;
+  height: 100vh;       /* full viewport height */
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.fullscreen-iframe iframe {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Section Headings (used inside iframe pages if needed) */
 section h2 {
   font-size: 2rem;
   font-weight: 600;
@@ -107,61 +116,34 @@ section h2 {
   padding-bottom: 5px;
 }
 
-/* IFRAME STYLING */
-iframe {
-  width: 100%;          /* Full width */
-  height: 100vh;        /* Full viewport height */
-  border: none;
-  border-radius: 0;
-  display: block;
-}
-
-/* RESPONSIVE TEXT */
+/* Responsive Text */
 @media (max-width: 768px) {
-  #home h1 {
-    font-size: 2rem;
-  }
-
-  #home h3 {
-    font-size: 1rem;
-  }
-
-  section h2 {
-    font-size: 1.5rem;
-  }
-
-  p {
-    font-size: 0.95rem;
-    padding: 0 10px;
-  }
-
-  nav a {
-    margin: 0 10px;
-    font-size: 0.9rem;
-  }
+  #home h1 { font-size: 2rem; }
+  #home h3 { font-size: 1rem; }
+  section h2 { font-size: 1.5rem; }
+  #home p { font-size: 0.95rem; padding: 0 10px; }
+  nav a { margin: 0 10px; font-size: 0.9rem; }
 }
 
-/* ======================= */
-/* ADD CSS BELOW FOR EACH HTML FILE ASSIGNED TO YOU */
-/* ======================= */
-
-/* Causes.html CSS */
-/* Example: style the content inside the causes iframe */
-#causes h2 {
+/* Example Styling Per Page (inside iframe pages) */
+#causes h2,
+#effects h2,
+#movements h2,
+#solutions h2 {
   color: var(--text-dark);
 }
 
-/* Effects.html CSS */
-/* Example: style the content inside the effects iframe */
-#effects h2 {
+#history h3 {
   color: var(--text-dark);
 }
 
-/* History.html CSS */
-/* Example: style the content inside the history iframe */
-#history h2 {
-  color: var(--text-dark);
+.site-header h3 {
+  color: darkred;
+  font-size: 28px;
+  text-align: center;
+  text-transform: uppercase;
 }
+
 
 /* Movements.html CSS */
 /* Example: style the content inside the movements iframe */
