@@ -61,7 +61,6 @@ nav a:hover {
   }
 }
 
-/* HERO SECTION */
 #home {
   min-height: 100vh;
   padding-top: 100px; /* space for navbar */
@@ -130,6 +129,208 @@ section h2 {
 
 /* Example Styling Per Page (inside iframe pages) */
 #causes h2,
+/* 
+   Causes.html css 
+   */
+.causes-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 85vmin;
+  height: 65vmin;
+  margin: 2rem auto;
+  border: 8px solid;
+  border-image: linear-gradient(
+      -50deg,
+      green,
+      #00b300,
+      forestgreen,
+      green,
+      lightgreen,
+      #00e600,
+      green
+    )
+    1;
+  transition: 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.causes-overlay {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 0.75rem;
+  background: #186218;
+  transition: 0.4s ease-in-out;
+  z-index: 1;
+}
+
+.causes-overlay-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 15vmin;
+  height: 100%;
+  padding: 0.5rem 0 0 0.5rem;
+  border: 3px solid;
+  border-image: linear-gradient(
+      to bottom,
+      #aea724 5%,
+      forestgreen 35% 65%,
+      #aea724 95%
+    )
+    0 0 0 100%;
+  transition: 0.3s ease-in-out 0.2s;
+  z-index: 1;
+}
+
+.causes-img-historical {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60vmin;
+  height: 100%;
+  background-image: url(../Assets/Images/Historical.png);
+  background-size: cover;
+  transition: 0.3s ease-in-out;
+}
+
+.causes-img-psych {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60vmin;
+  height: 100%;
+  background-image: url(../Assets/Images/Psychological.png);
+  background-size: cover;
+  transition: 0.3s ease-in-out;
+}
+
+.causes-img-systemic {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60vmin;
+  height: 100%;
+  background-image: url(../Assets/Images/Systematic.png);
+  background-size: cover;
+  transition: 0.3s ease-in-out;
+}
+
+.causes-text {
+  display: grid;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60vmin;
+  height: 100%;
+  padding: 3vmin 4vmin;
+  background: #fff;
+  box-shadow: inset 1px 1px 15px 0 rgba(0 0 0 / 0.4);
+  overflow-y: scroll;
+}
+
+/* hover effects */
+.causes-wrap:hover .causes-overlay {
+  transform: translateX(-60vmin);
+}
+.causes-wrap:hover .causes-image {
+  width: 30vmin;
+}
+.causes-wrap:hover .causes-overlay-content {
+  border: none;
+  transition-delay: 0.2s;
+  transform: translateX(60vmin);
+}
+
+/* simple animation utilities */
+.animate {
+  animation-duration: 0.7s;
+  animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+  animation-fill-mode: backwards;
+}
+
+@keyframes slide-left {
+  0% { opacity: 0; transform: translate(-40px, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+/* Carousel */
+.causes-carousel {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 70vmin;
+  position: relative;
+}
+
+.causes-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%; 
+}
+
+.causes-slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+.carousel-btn.next {
+  right: 10px;
+}
+/* Card Layout */
+.causes-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  margin: 2rem auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.causes-card {
+  flex: 1;
+  min-height: 60vmin;
+  transition: flex 0.5s ease, transform 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.causes-card:hover {
+  flex: 2.5; 
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+/* reuse your animated split style inside */
+.causes-card .causes-wrap {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* Hide overlay labels on hover so they don’t overlap */
+.causes-card:hover .causes-overlay-content {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+
 #effects h2,
 #movements h2,
 #solutions h2 {
