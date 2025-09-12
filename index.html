@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Racism Awareness</title>
   <link rel="stylesheet" href="style/style.css">
-  
+  <link rel="stylesheet" href="style/timeline.css"><!-- Needed for timeline -->
 </head>
 <body>
   <nav>
@@ -16,18 +16,17 @@
     <a href="#solutions">Solutions</a>
   </nav>
 
- <section id="home">
-  <h1>Together Against Racism</h1>
-  <h3>Learn. Reflect. Take Action.</h3>
-  <p>
-    Our mission is to raise awareness about racism—its roots, its impact, and the movements 
-    that challenge it—while inspiring meaningful conversations and solutions for a more just world.
-  </p>
-  <a href="#causes" class="cta-btn">Explore More</a>
-</section>
+  <section id="home">
+    <h1>Together Against Racism</h1>
+    <h3>Learn. Reflect. Take Action.</h3>
+    <p>
+      Our mission is to raise awareness about racism—its roots, its impact, and the movements 
+      that challenge it—while inspiring meaningful conversations and solutions for a more just world.
+    </p>
+    <a href="#causes" class="cta-btn">Explore More</a>
+  </section>
 
-
-    <section id="causes" class="fullscreen-iframe">
+  <section id="causes" class="fullscreen-iframe">
     <iframe src="causes.html"></iframe>
   </section>
 
@@ -35,9 +34,53 @@
     <iframe src="effects.html"></iframe>
   </section>
 
-  <section id="history" class="fullscreen-iframe">
-    <iframe src="history.html"></iframe>
+  <!-- ✅ History content is inline, not iframe -->
+  <section id="history">
+    <main>
+      <section class="timeline-section">
+        <h2>Timeline: History of Racism</h2>
+        <div class="timeline">
+
+          <div class="timeline-event left">
+            <div class="content">
+              <div class="date">1600s–1700s</div>
+              <p>Race emerges as a social and political category rooted in European colonialism and the transatlantic slave trade.</p>
+            </div>
+          </div>
+
+          <div class="timeline-event right">
+            <div class="content">
+              <div class="date">Late 1800s – Early 1900s</div>
+              <p>Jim Crow laws in the United States institutionalize segregation and disenfranchisement of Black Americans.</p>
+            </div>
+          </div>
+
+          <div class="timeline-event left">
+            <div class="content">
+              <div class="date">1921</div>
+              <p>Tulsa Race Massacre: A prosperous Black community was destroyed by white mobs in Tulsa, Oklahoma.</p>
+            </div>
+          </div>
+
+          <div class="timeline-event right">
+            <div class="content">
+              <div class="date">1964-1965</div>
+              <p>The Civil Rights Act and Voting Rights Act are passed in the U.S., major steps in legally ending segregation.</p>
+            </div>
+          </div>
+
+          <div class="timeline-event left">
+            <div class="content">
+              <div class="date">Present Day</div>
+              <p>Recognition of systemic racism: ongoing disparities in education, health, and housing drive global racial justice movements.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
   </section>
+  <!-- End of History -->
 
   <section id="movements" class="fullscreen-iframe">
     <iframe src="movements.html"></iframe>
