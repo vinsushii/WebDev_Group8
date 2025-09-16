@@ -399,130 +399,186 @@ section:not(#home) p {
 /* =========================
    TIMELINE SECTION
 ========================= */
-.timeline-section {
-  text-align: center;
-}
-
-.timeline-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 50px;
-  color: var(--accent-orange);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-/* Timeline Base */
+/* === Timeline Container === */
 .timeline {
   position: relative;
   max-width: 900px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 40px 20px;
 }
 
+/* Center vertical line */
 .timeline::after {
   content: '';
   position: absolute;
-  width: 4px;
-  background-color: var(--gray);
+  width: 6px;
+  background: linear-gradient(to bottom, #ff6f61, #6a5acd, #20b2aa);
   top: 0;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
+  margin-left: -3px;
+  border-radius: 3px;
 }
 
-/* Timeline Events */
+/* Timeline event */
 .timeline-event {
+  padding: 20px 40px;
   position: relative;
   width: 50%;
-  padding: 20px 40px;
   box-sizing: border-box;
 }
 
+.timeline-event.left { left: 0; }
+.timeline-event.right { left: 50%; }
+
+/* Circle markers */
+.timeline-event::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  width: 24px;
+  height: 24px;
+  border: 3px solid #fff;
+  background: #555;
+  border-radius: 50%;
+  z-index: 1;
+  transition: background 0.4s ease, transform 0.3s ease;
+}
+
+/* Left/right circle placement */
+.timeline-event.left::before {
+  right: -12px;
+}
+.timeline-event.right::before {
+  left: -12px;
+}
+
+/* === Event Content with Overlay === */
 .timeline-event .content {
-  background-color: #1c1c1c;
-  color: var(--text-light);
-  padding: 20px;
-  border-radius: 8px;
   position: relative;
-  border: 2px solid var(--gray);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #1c1c1c;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  padding: 0;
+  height: 320px; 
+  display: flex;
+  align-items: stretch;
 }
 
-.timeline-event .content:hover {
-  transform: scale(1.05);
+.timeline-event .content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.timeline-event .date {
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: var(--accent-yellow);
+
+.timeline-event .content:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.7);
+}
+
+/* Overlay text */
+.timeline-event .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 20, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.timeline-event .content:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Overlay heading + text */
+.timeline-event .overlay h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px whitesmoke;
+}
+
+.timeline-event .overlay p {
+  font-size: 1rem;
+  color: #e0e0e0;
+  margin: 5px 0;
+}
+
+/* === Intro Text === */
+.timeline-intro {
   font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ddd;
+  margin: 0 auto 25px auto;
+  max-width: 700px;
+  text-align: center;
 }
 
-/* Positioning Left/Right */
-.left { left: 0; }
-.left::before {
-  content: '';
-  position: absolute;
-  top: 32px;
-  right: -16px;
-  border: 8px solid transparent;
-  border-left-color: #1c1c1c;
-}
-.left::after {
-  content: '';
-  position: absolute;
-  top: 32px;
-  right: -8px;
-  width: 16px;
-  height: 16px;
-  background-color: #1c1c1c;
-  border: 4px solid var(--accent-blue);
-  border-radius: 50%;
-  z-index: 1;
+.timeline-intro .hover-hint {
+  display: block;
+  margin-top: 8px;
+  font-style: italic;
+  color: #bbb;
 }
 
-.right { left: 50%; }
-.right::before {
-  content: '';
-  position: absolute;
-  top: 32px;
-  left: -16px;
-  border: 8px solid transparent;
-  border-right-color: #1c1c1c;
-}
-.right::after {
-  content: '';
-  position: absolute;
-  top: 32px;
-  left: -8px;
-  width: 16px;
-  height: 16px;
-  background-color: #1c1c1c;
-  border: 4px solid var(--accent-pink);
-  border-radius: 50%;
-  z-index: 1;
+.timeline-section h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  position: relative;
+  color: #fff;
+  display: inline-block;
 }
 
-/* Responsive Timeline */
+.timeline-section h2::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 5px;
+  margin: 8px auto 0 auto;
+  border-radius: 3px;
+  background: linear-gradient(to right, #ff6f61, #6a5acd, #20b2aa);
+}
+
+/* === Hover Effect: Circle Changes Color When Event Hovered === */
+.timeline-event:hover::before {
+  background: linear-gradient(135deg, #ff6f61, #6a5acd, #20b2aa);
+  transform: scale(1.2);
+}
+
+/* === Responsive Adjustments === */
 @media screen and (max-width: 768px) {
-  .timeline::after { left: 20px; }
+  .timeline::after {
+    left: 8px;
+  }
+
   .timeline-event {
     width: 100%;
-    padding-left: 60px;
+    padding-left: 40px;
     padding-right: 25px;
-    margin-bottom: 40px;
   }
+
   .timeline-event.right { left: 0; }
+
   .timeline-event.left::before,
   .timeline-event.right::before {
-    left: 48px;
-    border: 8px solid transparent;
-    border-right-color: #1c1c1c;
+    left: 0;
   }
-  .timeline-event.left::after,
-  .timeline-event.right::after { left: 20px; }
 }
 
 
