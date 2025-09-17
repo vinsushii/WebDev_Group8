@@ -5,10 +5,139 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Racism Awareness — Solutions</title>
   <link rel="stylesheet" href="style/style.css" />
+  <style>
+    /* Container for each solution (image + card) */
+    .solution-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1000px;
+      margin: 40px auto;
+      flex-wrap: wrap;
+    }
+
+    /* Alternate layout */
+    .solution-row.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .solution-card {
+      flex: 1 1 400px;
+      background: #1c1c1c;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: visible !important; /* prevents internal scrollbars */
+    }
+
+    .solution-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.6);
+    }
+
+    .solution-card h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--accent-blue);
+    }
+
+    .solution-card p {
+      font-size: 1.05rem;
+      color: #ddd;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .solution-image {
+      flex: 1 1 300px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+    }
+
+    .solution-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .solution-row,
+      .solution-row.reverse {
+        flex-direction: column;
+      }
+      .solution-image,
+      .solution-card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <h1>Soultions</h1>
+  <!-- Page Header -->
+  <header class="site-header concept-one">
+    <div class="hover hover-1"></div>
+    <div class="hover hover-2"></div>
+    <div class="hover hover-3"></div>
+    <div class="hover hover-4"></div>
+    <div class="hover hover-6"></div>
+    <div class="hover hover-7"></div>
+    <div class="hover hover-8"></div>
+    <div class="hover hover-9"></div>
+    <h1>Solutions</h1>
   </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="solution-row">
+      <div class="solution-image">
+        <img src="Assets/Images/diffcolors.jpg" alt="Diversity colors image">
+      </div>
+      <div class="solution-card">
+        <h2>#1. Acknowledge racism in all its forms</h2>
+        <p>
+          The first step to ending racism is to recognize its existence. Many people think of racism as always overtly blatant or intentional, but racism comes in many forms. In the United States, studies show there’s bias in every sector of society from healthcare to housing to media. Job applicants with “stereotypical” African-American names are less likely to get called for an interview, while around the world, the beauty industry celebrates fair skin while degrading dark skin tones.
+        </p>
+        <p>
+          It’s also important to understand the history and evolution of racism. Things like poll taxes and literacy tests kept people from voting. While these laws didn’t explicitly mention race, they intended to target marginalized groups.
+        </p>
+      </div>
+    </div>
+
+    <div class="solution-row reverse">
+      <div class="solution-image">
+        <img src="Assets/Images/broken-chains.jpg" alt="Broken chains image">
+      </div>
+      <div class="solution-card">
+        <h2>#2. Overturn racist and discriminatory laws</h2>
+        <p>
+          Getting rid of laws that negatively and disproportionately affect certain races is a vital part of ending systemic racism. It isn’t enough to simply acknowledge that a law has a racist intent or effect; it needs to be overturned. There are many examples of systemic racism around the world.
+        </p>
+        <p>
+          In the United States, systemic racism is found in healthcare, banking, and education. In South Africa, the apartheid system (1948–1994) ensured that the white population stayed on top politically, socially, and economically, while black Africans were the most disenfranchised. China has a reputation for systemic racism against Black people in their universities. In 2020, the local Guangzhou government implemented strict surveillance and forced quarantines for all African nationals in response to Covid-19.
+        </p>
+      </div>
+    </div>
+
+    <div class="solution-row">
+      <div class="solution-image">
+        <img src="Assets/Images/together.jpg" alt="Unity image">
+      </div>
+      <div class="solution-card">
+        <h2>#3. Commit to anti-racism</h2>
+        <p>
+          On an individual level, people must commit to being anti-racist for racism to end. While we just mentioned that systemic racism wouldn’t end even if everyone stopped being racist overnight, that first step in personal anti-racism is necessary for people to fight to end racist systems. Anti-racism is a lifelong pursuit. It isn’t an accomplishment you can check off a list; it’s a continuous self-reflection and willingness to be held accountable.
+        </p>
+        <p>
+          To be anti-racist, you must acknowledge differences rather than pretending they aren’t there. As an example, when addressing the gender pay gap, it’s essential to acknowledge that white women make more than Black, Hispanic, and Native women. At the same time, anti-racists must also identify the common goals they share with other racial groups. This helps build solidarity.
+        </p>
+      </div>
+    </div>
+  </main>
+
 </body>
 </html>
