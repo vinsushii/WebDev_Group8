@@ -1,143 +1,208 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Racism Awareness — Solutions</title>
-  <link rel="stylesheet" href="style/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anti-Racism Solutions</title>
   <style>
-    /* Container for each solution (image + card) */
-    .solution-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      max-width: 1000px;
-      margin: 40px auto;
-      flex-wrap: wrap;
+    :root {
+      --bg-dark: #111111;
+      --text-light: #f5f5f5;
+      --accent-orange: #f24139;
+      --accent-blue: #2a9df4;
+      --accent-yellow: #f5b700;
+      --accent-pink: #e94e77;
+      --gray: #888888;
     }
 
-    /* Alternate layout */
-    .solution-row.reverse {
-      flex-direction: row-reverse;
+    body {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 60px 20px;
     }
 
-    .solution-card {
-      flex: 1 1 400px;
-      background: #1c1c1c;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.5);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      overflow: visible !important; /* prevents internal scrollbars */
+    h1.section-title {
+      font-size: 2.2rem;
+      color: var(--text-light);
+      margin-bottom: 40px;
+      text-align: left; /* fixed to left side */
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      transition: color 0.3s ease;
     }
 
-    .solution-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.6);
-    }
-
-    .solution-card h2 {
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
+    h1.section-title:hover {
       color: var(--accent-blue);
     }
 
-    .solution-card p {
-      font-size: 1.05rem;
-      color: #ddd;
-      line-height: 1.6;
-      margin-bottom: 1rem;
+    .articles {
+      display: flex;
+      flex-direction: column;
+      max-width: 700px; /* smaller width */
+      margin: 0 auto;
+      gap: 30px;
     }
 
-    .solution-image {
-      flex: 1 1 300px;
-      border-radius: 12px;
+    article {
+      background: #1c1c1c;
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
     }
 
-    .solution-image img {
+    article:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.9),
+                  0 0 12px var(--accent-blue);
+    }
+
+    figure {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 300px; /* taller image */
+    }
+
+    article img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
+      transition: transform 0.4s ease;
     }
 
-    /* Responsive */
+    article:hover img {
+      transform: scale(1.1);
+    }
+
+    .article-body {
+      padding: 20px;
+    }
+
+    .article-body h2 {
+      margin: 0 0 15px 0;
+      font-size: 1.5rem;
+      color: var(--text-light);
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      transition: color 0.3s ease;
+      text-align: left;
+    }
+
+    .article-body h2:hover {
+      color: var(--accent-blue);
+    }
+
+    .article-body p {
+      color: #ddd;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    /* --- Details/Read More Styling --- */
+    summary {
+      list-style: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      color: var(--accent-pink);
+      text-decoration: underline;
+      display: inline;
+      transition: color 0.2s ease;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary:hover {
+      color: var(--accent-orange);
+    }
+
+    details {
+      overflow: hidden;
+      transition: max-height 0.4s ease-in-out;
+      max-height: 2.5em; /* shows only summary at first */
+    }
+
+    details[open] {
+      max-height: 500px; /* expands smoothly */
+    }
+
     @media (max-width: 768px) {
-      .solution-row,
-      .solution-row.reverse {
-        flex-direction: column;
-      }
-      .solution-image,
-      .solution-card {
-        flex: 1 1 100%;
+      .articles {
+        max-width: 95%;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Page Header -->
-  <header class="site-header concept-one">
-    <div class="hover hover-1"></div>
-    <div class="hover hover-2"></div>
-    <div class="hover hover-3"></div>
-    <div class="hover hover-4"></div>
-    <div class="hover hover-6"></div>
-    <div class="hover hover-7"></div>
-    <div class="hover hover-8"></div>
-    <div class="hover hover-9"></div>
-    <h1>Solutions</h1>
-  </header>
-
-  <!-- Main Content -->
-  <main>
-    <div class="solution-row">
-      <div class="solution-image">
-        <img src="Assets/Images/diffcolors.jpg" alt="Diversity colors image">
-      </div>
-      <div class="solution-card">
+  <h1 class="section-title">Solutions</h1>
+  <section class="articles">
+    <article>
+      <figure>
+        <img src="Assets/Images/diffcolors.jpg" alt="Diversity colors image" />
+      </figure>
+      <div class="article-body">
         <h2>#1. Acknowledge racism in all its forms</h2>
         <p>
-          The first step to ending racism is to recognize its existence. Many people think of racism as always overtly blatant or intentional, but racism comes in many forms. In the United States, studies show there’s bias in every sector of society from healthcare to housing to media. Job applicants with “stereotypical” African-American names are less likely to get called for an interview, while around the world, the beauty industry celebrates fair skin while degrading dark skin tones.
+          The first step to ending racism is to recognize its existence. Many people think of racism as always overtly blatant or intentional, but racism comes in many forms...
         </p>
-        <p>
-          It’s also important to understand the history and evolution of racism. Things like poll taxes and literacy tests kept people from voting. While these laws didn’t explicitly mention race, they intended to target marginalized groups.
-        </p>
+        <details>
+          <summary>Read more</summary>
+          <p>
+            In the United States, studies show there’s bias in every sector of society from healthcare to housing to media. Job applicants with “stereotypical” African-American names are less likely to get called for an interview, while around the world, the beauty industry celebrates fair skin while degrading dark skin tones.
+          </p>
+          <p>
+            It’s also important to understand the history and evolution of racism. Things like poll taxes and literacy tests kept people from voting. While these laws didn’t explicitly mention race, they intended to target marginalized groups.
+          </p>
+        </details>
       </div>
-    </div>
+    </article>
 
-    <div class="solution-row reverse">
-      <div class="solution-image">
-        <img src="Assets/Images/broken-chains.jpg" alt="Broken chains image">
-      </div>
-      <div class="solution-card">
+    <article>
+      <figure>
+        <img src="Assets/Images/broken-chains.jpg" alt="Broken chains image" />
+      </figure>
+      <div class="article-body">
         <h2>#2. Overturn racist and discriminatory laws</h2>
         <p>
-          Getting rid of laws that negatively and disproportionately affect certain races is a vital part of ending systemic racism. It isn’t enough to simply acknowledge that a law has a racist intent or effect; it needs to be overturned. There are many examples of systemic racism around the world.
+          Getting rid of laws that negatively and disproportionately affect certain races is a vital part of ending systemic racism...
         </p>
-        <p>
-          In the United States, systemic racism is found in healthcare, banking, and education. In South Africa, the apartheid system (1948–1994) ensured that the white population stayed on top politically, socially, and economically, while black Africans were the most disenfranchised. China has a reputation for systemic racism against Black people in their universities. In 2020, the local Guangzhou government implemented strict surveillance and forced quarantines for all African nationals in response to Covid-19.
-        </p>
+        <details>
+          <summary>Read more</summary>
+          <p>
+            It isn’t enough to simply acknowledge that a law has a racist intent or effect; it needs to be overturned. There are many examples of systemic racism around the world.
+          </p>
+          <p>
+            In the United States, systemic racism is found in healthcare, banking, and education. In South Africa, the apartheid system (1948–1994) ensured that the white population stayed on top politically, socially, and economically, while black Africans were the most disenfranchised. China has a reputation for systemic racism against Black people in their universities. In 2020, the local Guangzhou government implemented strict surveillance and forced quarantines for all African nationals in response to Covid-19.
+          </p>
+        </details>
       </div>
-    </div>
+    </article>
 
-    <div class="solution-row">
-      <div class="solution-image">
-        <img src="Assets/Images/together.jpg" alt="Unity image">
-      </div>
-      <div class="solution-card">
+    <article>
+      <figure>
+        <img src="Assets/Images/together.jpg" alt="Unity image" />
+      </figure>
+      <div class="article-body">
         <h2>#3. Commit to anti-racism</h2>
         <p>
-          On an individual level, people must commit to being anti-racist for racism to end. While we just mentioned that systemic racism wouldn’t end even if everyone stopped being racist overnight, that first step in personal anti-racism is necessary for people to fight to end racist systems. Anti-racism is a lifelong pursuit. It isn’t an accomplishment you can check off a list; it’s a continuous self-reflection and willingness to be held accountable.
+          On an individual level, people must commit to being anti-racist for racism to end. While we just mentioned that systemic racism wouldn’t end even if everyone stopped being racist overnight...
         </p>
-        <p>
-          To be anti-racist, you must acknowledge differences rather than pretending they aren’t there. As an example, when addressing the gender pay gap, it’s essential to acknowledge that white women make more than Black, Hispanic, and Native women. At the same time, anti-racists must also identify the common goals they share with other racial groups. This helps build solidarity.
-        </p>
+        <details>
+          <summary>Read more</summary>
+          <p>
+            That first step in personal anti-racism is necessary for people to fight to end racist systems. Anti-racism is a lifelong pursuit. It isn’t an accomplishment you can check off a list; it’s a continuous self-reflection and willingness to be held accountable.
+          </p>
+          <p>
+            To be anti-racist, you must acknowledge differences rather than pretending they aren’t there. As an example, when addressing the gender pay gap, it’s essential to acknowledge that white women make more than Black, Hispanic, and Native women. At the same time, anti-racists must also identify the common goals they share with other racial groups. This helps build solidarity.
+          </p>
+        </details>
       </div>
-    </div>
-  </main>
-
+    </article>
+  </section>
 </body>
 </html>
