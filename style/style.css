@@ -90,8 +90,6 @@ nav a::after {
   left: 0;
   width: 100%;
   height: 100%;
-  margin-left: 0.5in;
-  margin-right: 0.5in;
   border: none;
 }
 
@@ -461,125 +459,159 @@ section:not(#home) p {
 .fullscreen-iframe.effects{
   height: 300vh;
 }
-
-.effects > p{
-  font-size: large;
-  line-height: 200%;
+.effects {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  box-sizing: border-box;
 }
 
-.effects a:link{
+.effects > p {
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.effects a:link {
   color: lightseagreen;
 }
 
-.effects a:visited{
+.effects a:visited {
   color: #6a5acd;
 }
 
-.effects{
-  padding: auto;
-  height: auto;
-}
-
-#effects-title{
+#effects-title {
   text-align: center;
-  font: 900 3rem "Montserrat", sans-serif;  color:white;
-  letter-spacing: 10px;
+  font: 900 3rem "Montserrat", sans-serif;
+  color: white;
+  letter-spacing: 5px;
   transition: color 1s;
 }
 
-#effects-title:hover{
+#effects-title:hover {
   color: orange;
 }
 
-.effects.row{
-  display: grid;
-  grid-template-columns: auto auto;
-  margin-bottom: 1vmax;
-}
 
-@media (max-width: 768px) {
-  .effects.row{
-    grid-template-columns: auto;
-  }
-}
-
-.effects.column{
+.effects.column {
+  line-height: 1.5;
+  width: 100%; 
+  padding: 1rem;
   text-align: justify;
-  line-height: 200%;
-  padding: 30px;
 }
 
-.effects.column > img{
-  height: 20vmax;
-  width: 21vmax;
+
+.effects.column.image > img {
+  height: 10vmax; 
+  width: 100%; 
   border-radius: 20px;
   object-fit: cover;
   transition: all 0.3s ease-in-out;
 }
-.effects.column > img:hover{
+
+.effects.column.image > img:hover {
   box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
-  scale: 1.05;
+  transform: scale(1.05); 
 }
 
-.effects.row.statistics{
-  text-align: center;
-  align-items: center;
+.slideshow{
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  border-radius: 18px;
+  margin: 50px auto;
 }
 
-.slideshow-text{
-  transition: .5s ease;
+.slideshow > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: slideshow 20s infinite;
+  opacity: 0;
+}
+
+.slideshow > div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.slideshow > div .middle {
+  transition: 0.5s ease;
+  font-size: 2rem; 
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
   opacity: 0;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   text-align: center;
+  width: 80%; 
 }
 
-.slideshow {
-  width:100%; 
-  height: 500px; 
-  overflow:hidden; 
-  position:relative;
-  border-radius: 18px; 
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-.slideshow > div{ 
-  position:absolute; 
-  animation:slideshow 20s infinite;
-  opacity:0; 
-  width: 100%;
-}
-.slideshow > div img{width: 100%; height: 100%; transition: .3s;}
-.slideshow > div .middle{
-  transition: .5s ease;
-  font-size: 50px;
-  font-weight: bold;
-  font-family: 'Times New Roman', Times, serif;
-  opacity: 0;
-  position: absolute;
-  top: 249px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.slideshow:hover div img{
+.slideshow:hover div img {
   opacity: 0.3;
 }
-.slideshow:hover div .middle{
+
+.slideshow:hover div .middle {
   opacity: 1;
 }
 
-@keyframes slideshow {25%{opacity:1;} 40%{opacity:0;}}
-.slideshow div:nth-child(1), .slideshow .middle:nth-child(1){animation-delay:0s;}
-.slideshow div:nth-child(3){animation-delay:5s;}
-.slideshow div:nth-child(2){animation-delay:10s;}
-.slideshow div:nth-child(4){animation-delay:15s;}
 
+@media screen and (min-width: 768px) {
+  
+  .effects.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem; 
+    margin-bottom: 1vh;
+    padding: 1rem;
+  }
+
+  #effects-title {
+    letter-spacing: 10px;
+  }
+
+  .effects > p {
+    font-size: 1.1rem;
+  }
+
+
+  .effects.column.image > img {
+    height: 20vmax; 
+    width: 100%; 
+  }
+}
+
+@keyframes slideshow {
+  25% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+}
+.slideshow div:nth-child(1) {
+  animation-delay: 0s;
+}
+.slideshow div:nth-child(2) {
+  animation-delay: 5s;
+}
+.slideshow div:nth-child(3) {
+  animation-delay: 10s;
+}
+.slideshow div:nth-child(4) {
+  animation-delay: 15s;
+}
+
+/*----- END OF EFFECTS SECTION*/
 
 /* =========================
    HISTORY OF RACISM TIMELINE SECTION
