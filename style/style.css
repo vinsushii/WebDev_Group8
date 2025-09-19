@@ -446,12 +446,111 @@ section:not(#home) p {
 .causes-card .toggle {
   display: none;
 }
-/* =========================
-   MOBILE: Causes Section
-========================= */
 
+@media (max-width: 768px) {
+  .causes-grid {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+  }
 
+.causes-card {
+  border-radius: 0px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  background: transparent;   
+  border: 4px solid #000;   
+}
 
+.causes-wrap {
+  flex: 1;  
+  display: flex;
+  flex-direction: column;
+  border-width: 0;          
+  background: transparent;   
+}
+
+.causes-image {
+  width: 100%;
+  height: auto;   
+  aspect-ratio: 16/9; 
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  flex-shrink: 0;
+}
+
+  .causes-overlay {
+    position: absolute;
+    inset: 0; 
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+
+  .causes-overlay-content h2 {
+    font-size: 2rem;        
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  }
+
+  .causes-overlay-content {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    background: none;
+    border: none;
+    width: auto;
+    height: auto;
+    padding: 0;
+  }
+
+    .causes-text {
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease, max-height 0.5s ease, transform 0.4s ease;
+    transform: translateY(-10px);
+  }
+
+  /* Checkbox hack: animate open */
+  .toggle:checked + .causes-wrap .causes-text {
+    opacity: 1;
+    max-height: 1000px; /* expand smoothly */
+    transform: translateY(0);
+  }
+   /* Animate image when expanded */
+  .toggle:checked + .causes-wrap .causes-image {
+    transform: scale(1.05);
+    filter: brightness(0.7);
+  }
+  
+  /* Disable hover animations on mobile */
+  .causes-wrap:hover .causes-overlay,
+  .causes-wrap:hover .causes-image,
+  .causes-wrap:hover .causes-overlay-content,
+  .causes-wrap:hover .causes-text {
+    transform: none;
+    filter: none;
+    opacity: 1;
+    visibility: visible;
+  }
+}
 
 /* end of causes section
 
