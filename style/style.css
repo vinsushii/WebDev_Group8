@@ -565,6 +565,10 @@ section:not(#home) p {
   height: 230vh;
 }
 
+.fullscreen-iframe.history{
+  height: 260vh;
+}
+
 hr{
   width: 100%;
 }
