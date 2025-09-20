@@ -1074,7 +1074,7 @@ footer {
     --gray: #666666;
   }
   
- 
+  
   body {
     background: linear-gradient(135deg, var(--accent-yellow), var(--accent-orange), var(--accent-blue));
     color: var(--text-light);
@@ -1133,24 +1133,25 @@ footer {
   .causes-card,
   .effects,
   .timeline,
+  .timeline-conclusion
   .movement-card,
   .solutions {
     background: rgba(255,255,255,0.95);
     border-radius: 16px;
     margin: 15px 0;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
     color: #222;
   }
 
   /* --- Global Text Consistency --- */
-  body, 
-  .section p,
-  .causes-text, 
-  .effects p, 
-  .timeline-intro, 
-  .timeline-conclusion, 
-  .movement-card p {
-    color: #222 !important;   
+body, 
+section p:not(#home p),
+.causes-text, 
+.effects p, 
+.timeline-intro p, 
+.timeline-conclusion p, 
+.movement-card p {
+  color: #222 !important;   /* dark neutral */
+}
 
   /* Section titles */
   section h2,
