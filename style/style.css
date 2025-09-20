@@ -653,7 +653,7 @@ hr{
 
 .slideshow > div .middle {
   transition: 0.5s ease;
-  font-size: 4.5rem; 
+  font-size: 3rem; 
   font-weight: bold;
   font-family: 'Times New Roman', Times, serif;
   opacity: 0;
@@ -698,7 +698,7 @@ hr{
     width: 100%; 
   }
   .slideshow > div .middle{
-    font-size: 3rem;
+    font-size: 4.5rem;
   }
 }
 
