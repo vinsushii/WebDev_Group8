@@ -16,6 +16,10 @@ body {
   margin: 0;
   overflow-x: hidden;
 }
+iframe {
+  overflow: hidden;
+}
+
 
 /* Fullscreen iframe sections */
 .fullscreen-iframe {
@@ -446,25 +450,27 @@ section:not(#home) p {
 .causes-card .toggle {
   display: none;
 }
-
+/*MOBILE VIEW FOR CAUSES*/
 @media (max-width: 768px) {
   .causes-grid {
     flex-direction: column;
     gap: 20px;
     padding: 0 10px;
+  
   }
 
 .causes-card {
-  border-radius: 0px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 0;
+  margin: 10px 0;
   padding: 0;
   background: transparent;   
-  border: 4px solid #000;   
+  border: 4px transparent;   
+  border-radius: 20px 20px 20px 20px;
+  
 }
 
 .causes-wrap {
@@ -512,13 +518,13 @@ section:not(#home) p {
     border: none;
     width: auto;
     height: auto;
-    padding: 0;
   }
 
     .causes-text {
     position: relative;
     width: 100%;
-    padding: 1rem;
+    box-sizing: border-box;
+    padding: 1rem 1.5rem;
     background: rgba(0,0,0,0.85);
     color: #fff;
     opacity: 0;
