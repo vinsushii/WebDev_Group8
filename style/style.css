@@ -568,6 +568,14 @@ section:not(#home) p {
   height: 260vh;
 }
 
+.fullscreen-iframe.movement{
+  height: 270vh;
+}
+
+.fullscreen-iframe.solutions{
+  height: 200vh;
+}
+
 hr{
   width: 100%;
 }
