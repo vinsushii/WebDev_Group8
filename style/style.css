@@ -556,7 +556,11 @@ section:not(#home) p {
 
 /*----- EFFECTS SECTION -----*/
 .fullscreen-iframe.effects{
-  height: 300vh;
+  height: 230vh;
+}
+
+hr{
+  width: 100%;
 }
 .effects {
   padding: 0;
@@ -602,7 +606,7 @@ section:not(#home) p {
 
 
 .effects.column.image > img {
-  height: 10vmax; 
+  height: 12vmax; 
   width: 100%; 
   border-radius: 20px;
   object-fit: cover;
@@ -615,13 +619,13 @@ section:not(#home) p {
 }
 
 .slideshow{
-  width: 100%;
+  width:95%;
   padding-bottom: 56.25%; 
   height: 0;
   overflow: hidden;
   position: relative;
   border-radius: 18px;
-  margin: 50px auto;
+  margin: 50px 10px 50px 10px;
 }
 
 .slideshow > div {
@@ -643,7 +647,7 @@ section:not(#home) p {
 
 .slideshow > div .middle {
   transition: 0.5s ease;
-  font-size: 2rem; 
+  font-size: 4.5rem; 
   font-weight: bold;
   font-family: 'Times New Roman', Times, serif;
   opacity: 0;
@@ -684,8 +688,11 @@ section:not(#home) p {
 
 
   .effects.column.image > img {
-    height: 20vmax; 
+    height: 15vh; 
     width: 100%; 
+  }
+  .slideshow > div .middle{
+    font-size: 3rem;
   }
 }
 
