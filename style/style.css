@@ -16,10 +16,6 @@ body {
   margin: 0;
   overflow-x: hidden;
 }
-iframe {
-  overflow: hidden;
-}
-
 
 /* Fullscreen iframe sections */
 .fullscreen-iframe {
@@ -859,6 +855,22 @@ hr{
 }
 
 .timeline-intro .hover-hint {
+  display: block;
+  margin-top: 8px;
+  font-style: italic;
+  color: #bbb;
+}
+.timeline-conclusion {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ddd;
+  margin: 0 auto 50px auto;  /* increased bottom margin */
+  max-width: 700px;
+  text-align: center;
+  padding-bottom: 1rem;      /* extra safety */
+}
+
+.timeline-conclusion .hover-hint {
   display: block;
   margin-top: 8px;
   font-style: italic;
